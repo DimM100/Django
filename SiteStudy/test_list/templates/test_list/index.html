@@ -1,0 +1,69 @@
+{% extends "wrapper.html" %}
+
+{% block title_paper %}
+DIMM100: Тесты
+{% endblock %}
+
+{% block content_script %}
+
+<script>
+  let quests_title = [];
+  let quests_text = [];
+  let quests_ans = [];
+  let j = 1;
+  let sum = 0;
+  {% for quest in quests %}
+    quests_title[j] = "{{ quest.title_quest_test }}";
+    quests_text[j] = "{{ quest.text_quest_test }}";
+    quests_ans[j] = "{{ quest.true_answer }}";
+    j = j + 1;
+  {% endfor %}
+  let i = 1;
+  function next_test() {
+      if (i < j) {
+        if($("input").is(".text_ans")) {
+          if(quests_ans[i-1] == $(".text_ans").val())
+          {
+            sum = sum + 1;
+          }
+        }
+        if(i < j - 1) {
+          $(".button-test").html("Следующий вопрос");
+        }
+        else{
+          $(".button-test").html("Перейти к результатам");
+        }
+        $(".test-block-title").html(quests_title[i]);
+        $(".test-block-text").html(quests_text[i] + "<br><br><input type='text' class='text_ans'><br>");
+        i = i + 1;
+      }
+      else {
+        if($("input").is(".text_ans")) {
+          if(quests_ans[i-1] == $(".text_ans").val())
+          {
+            sum = sum + 1;
+          }
+        }
+        $(".button-block-test").html("<button type='submit' class='button-test' name='button' value='"+sum+"'>Вернуться к выбору теста</button>");
+        $(".test-block-title").html("Тест пройден");
+        $(".test-block-text").html("Результат тестирования: " + sum + "/" + (j-1));
+      }
+  }
+</script>
+{% endblock %}
+
+{% block content %}
+<div class='test-block'>
+  <form method="POST" action="" name="form-test">
+    {% csrf_token %}
+    <div class='test-block-title' name='test-block-title'>
+      {{ test.title_test }}
+    </div>
+    <div class='test-block-text' name='test-block-text'>
+      {{ test.text_test }}
+    </div>
+    <!-- <input type=text class="input_ask" id="input_ask"><br> -->
+    <div class="button-block-test"><button type="button" class="button-test" name="button" onclick='next_test()'>Перейти к вопросам</button></div>
+  </form>
+</div>
+{% endblock %}

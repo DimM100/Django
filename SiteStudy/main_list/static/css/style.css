@@ -1,0 +1,367 @@
+body {
+  background-color: rgba(0, 0, 0);
+}
+
+.body_site {
+  width: 100%;
+}
+
+.header {
+  position: fixed;
+  background-color: white;
+  text-align: center;
+  display: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+}
+
+.header-index-a {
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+}
+
+.header-index-a-active {
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(14, 89, 94, 1);
+  color: black;
+}
+
+button {
+  font-family: "Times New Roman";
+  padding: 10px;
+  margin: 10px;
+  background-color: none;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  font-size: 14px;
+}
+
+button:active {
+  border-bottom: 2px solid rgba(14, 89, 94, 1);
+}
+
+button {
+  font-family: "Times New Roman";
+  padding: 10px;
+  margin: 10px;
+  background-color: none;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  font-size: 14px;
+}
+
+button:active {
+  border-bottom: 2px solid rgba(14, 89, 94, 1);
+}
+
+.submit-chose-test {
+  font-family: "Times New Roman";
+  padding: 10px;
+  margin: 10px;
+  background-color: none;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  font-size: 14px;
+}
+
+.submit-chose-test:active {
+  border-bottom: 2px solid rgba(14, 89, 94, 1);
+}
+/* Страница с задачами */
+
+.quest-block {
+  margin-top: 80px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  margin-left: 10%;
+  display: absolute;
+  width: 30%;
+  background-color: rgba(255,255,255,0.9);
+  border-left: 2px solid rgba(14, 89, 94, 1);
+}
+
+.quest-block-title {
+  font-weight: bold;
+  font-family: "Times New Roman";
+  padding: 10px;
+  margin: 10px;
+  border-left: 2px solid rgba(14, 89, 94, 1);
+}
+
+.quest-block-text {
+  font-family: "Times New Roman";
+  padding: 5px;
+  margin: 10px;
+}
+
+.quest-block-date {
+  font-family: "Times New Roman";
+  padding: 5px;
+  border-right: 2px solid rgba(14, 89, 94, 1);
+  margin-left: 70%;
+}
+
+.quest-block-img {
+  padding: 5px;
+  margin: 10px;
+}
+
+/* Основная страница */
+
+.full-news-block{
+  width: 80%;
+  margin-top: 80px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-left: 10%;
+}
+
+.news-block {
+  vertical-align: middle;
+  display: inline-block;
+  padding: 10px;
+  width: 50%;
+  background-color: rgba(255,255,255,0.9);
+  border-left: 2px solid rgba(14, 89, 94, 1);
+}
+
+.news-block-title {
+  font-weight: bold;
+  font-family: "Times New Roman";
+  padding: 10px;
+  margin: 10px;
+  border-left: 2px solid rgba(14, 89, 94, 1);
+}
+
+.news-block-text {
+  font-family: "Times New Roman";
+  padding: 5px;
+  margin: 10px;
+}
+
+.news-block-date {
+  font-family: "Times New Roman";
+  padding: 5px;
+  border-right: 2px solid rgba(14, 89, 94, 1);
+  margin-left: 70%;
+}
+
+.news-block-img {
+  vertical-align: middle;
+  display: inline-block;
+  padding: 5px;
+  height: 200px;
+}
+
+/* Вывод теории */
+
+.theory-block {
+  margin-top: 80px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  margin-left: 10%;
+  display: absolute;
+  width: 30%;
+  background-color: rgba(255,255,255,0.9);
+  border-left: 2px solid rgba(14, 89, 94, 1);
+}
+
+.theory-block-title {
+  font-weight: bold;
+  font-family: "Times New Roman";
+  padding: 10px;
+  margin: 10px;
+  border-left: 2px solid rgba(14, 89, 94, 1);
+}
+
+.theory-block-text {
+  font-family: "Times New Roman";
+  padding: 5px;
+  margin: 10px;
+}
+
+.theory-block-date {
+  font-family: "Times New Roman";
+  padding: 5px;
+  border-right: 2px solid rgba(14, 89, 94, 1);
+  margin-left: 70%;
+}
+
+.theory-block-img {
+  padding: 5px;
+  margin: 10px;
+}
+
+/* Резюме */
+.resume-fio-block {
+  margin-top: 80px;
+  border-left: 2px solid rgba(14, 89, 94, 1);
+  width: 30%;
+
+  padding: 10px;
+  margin-left: 10%;
+}
+
+.resume-name-block {
+  border-left: 2px solid rgba(14, 89, 94, 1);
+  background-color: rgba(255,255,255,0.9);
+  padding: 10px;
+}
+
+.resume-name-block-1 {
+  border-bottom: 2px solid rgba(14, 89, 94, 1);
+  padding: 5px;
+}
+
+.resume-name-block-2 {
+  padding: 5px;
+}
+
+.resume-study-block-title {
+  border-bottom: 2px solid rgba(14, 89, 94, 1);
+  padding: 5px;
+}
+
+.resume-study-block {
+  border-left: 2px solid rgba(14, 89, 94, 1);
+  width: 30%;
+  background-color: rgba(255,255,255,0.9);
+  padding: 10px;
+  margin-left: 10%;
+  margin-top: 20px;
+}
+
+.resume-study-block-1-name {
+  border-left: 2px solid rgba(14, 89, 94, 1);
+  margin: 10px;
+}
+
+.resume-study-block-1-name-1 {
+  margin: 5px;
+}
+
+.resume-study-block-1-name-2 {
+  margin: 5px;
+}
+
+.resume-block-img {
+  background-color: rgba(14, 89, 94, 0.4);
+  position: fixed;
+  width: 30%;
+  top: 20%;
+  left: 50%;
+}
+
+.resume-block-img-img {
+  margin: 5%;
+  width: 90%;
+}
+
+.fon {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: -10;
+}
+
+.fon_1 {
+  left: 0;
+  position: fixed;
+  width: 100%;
+  z-index: -9;
+}
+
+/* КИМы */
+.adr-kim {
+  padding: 10px;
+  margin: 10px;
+  text-decoration: none;
+  color: rgba(14, 89, 94, 1);
+  font-size: 14px;
+}
+
+.test-block {
+  position: fixed;
+  margin-top: 10vh;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  width: 60vw;
+  background-color: rgba(255,255,255,0.9);
+  text-align: center;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+.test-block-title {
+  font-weight: bold;
+  font-family: "Times New Roman";
+  padding: 10px;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  border-top: 2px solid rgba(14, 89, 94, 1);
+}
+
+.test-block-text {
+  font-family: "Times New Roman";
+  padding: 10px;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+/* Регистрация/авторизация */
+
+.logreg-block {
+  position: fixed;
+  margin-top: 10vh;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  width: 60vw;
+  background-color: rgba(255,255,255,0.9);
+  text-align: center;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+.logreg-block-title {
+  font-weight: bold;
+  font-family: "Times New Roman";
+  padding: 10px;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  border-top: 2px solid rgba(14, 89, 94, 1);
+}
+
+.logreg-block-text {
+  text-align: left;
+  font-family: "Times New Roman";
+  padding: 10px;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+#header-index-login {
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+  background-color: rgba(14, 89, 94, 0.5);
+}
+
+#header-index-a-login {
+  font-size: 14px;
+  color: white;
+  background-color: rgba(14, 89, 94, 0.5);
+}

@@ -1,0 +1,45 @@
+{% extends "wrapper.html" %}
+
+{% block title_paper %}
+DIMM100: Главная страница
+{% endblock %}
+
+{% block content_script %}
+<script type="text/javascript">
+
+</script>
+{% endblock %}
+
+{% block content %}
+<div class='header' id='header-index'>
+  <a class='header-index-a-active' id='header-index-a-main_list' href="/">Основная страница</a>
+  <a class='header-index-a' id='header-index-a-resume' href="/resume">Резюме</a>
+  <a class='header-index-a' id='header-index-a-quest' href="/quest">Задания</a>
+  <a class='header-index-a' id='header-index-a-theory' href="/theory">Теория</a>
+  <a class='header-index-a' id='header-index-a-kim' href="/kim">КИМы</a>
+  <a class='header-index-a' id='header-index-a-test' href="/test">Тесты</a>
+  <a class='header-index-a' id='header-index-login'>{{ user }}</a>
+  <a class='header-index-a' id='header-index-a-login' href="/login">Сменить пользователя</a>
+</div>
+
+{% csrf_token %}
+{% for new in news %}
+<div class='full-news-block'>
+  <div class='news-block'>
+    <div class='news-block-title'>
+      {{ new.title_news }}
+    </div>
+    <div class='news-block-text'>
+      {{ new.text_news }}
+    </div>
+    <div class='news-block-date'>
+      {{ new.date_news }}
+    </div>
+  </div>
+  <div class='news-block-img'>
+    <img src='{{ new.img_news }}' class='news-block-img'>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock %}

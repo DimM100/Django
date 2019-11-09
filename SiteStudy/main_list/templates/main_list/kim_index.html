@@ -1,0 +1,37 @@
+{% extends "wrapper.html" %}
+
+{% block title_paper %}
+DIMM100: КИМы
+{% endblock %}
+
+{% block content_script %}
+
+{% endblock %}
+
+{% block content %}
+<div class='header' id='header-index'>
+  <a class='header-index-a' id='header-theory-index-a-main_list' href="/">Основная страница</a>
+  <a class='header-index-a' id='header-theory-index-a-resume' href="/resume">Резюме</a>
+  <a class='header-index-a' id='header-theory-index-a-quest' href="/quest">Задания</a>
+  <a class='header-index-a' id='header-theory-index-a-theory' href="/theory">Теория</a>
+  <a class='header-index-a-active' id='header-theory-index-a-kim' href="/kim">КИМы</a>
+  <a class='header-index-a' id='header-index-a-test' href="/test">Тесты</a>
+  <a class='header-index-a' id='header-index-login'>{{ user }}</a>
+  <a class='header-index-a' id='header-index-a-login' href="/login">Сменить пользователя</a>
+</div>
+
+{% csrf_token %}
+{% for kim in kims %}
+<div class='theory-block'>
+  <div class='theory-block-title'>
+    {{ kim.title_kim }}
+  </div>
+  <div class='theory-block-text'>
+    {{ kim.text_kim }}<br>
+  </div>
+  <a class='adr-kim' href="{{ kim.adress_kim }}">Перейти к документу</a>
+</div>
+
+{% endfor %}
+
+{% endblock %}

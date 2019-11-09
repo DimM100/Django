@@ -1,0 +1,39 @@
+{% extends "wrapper.html" %}
+
+{% block title_paper %}
+DIMM100: Задачи
+{% endblock %}
+
+{% block content_script %}
+
+{% endblock %}
+
+{% block content %}
+<div class='header' id='header-index'>
+  <a class='header-index-a' id='header-quest-index-a-main_list' href="/">Основная страница</a>
+  <a class='header-index-a' id='header-quest-index-a-resume' href="/resume">Резюме</a>
+  <a class='header-index-a-active' id='header-quest-index-a-quest' href="/quest">Задания</a>
+  <a class='header-index-a' id='header-quest-index-a-theory' href="/theory">Теория</a>
+  <a class='header-index-a' id='header-quest-index-a-kim' href="/kim">КИМы</a>
+  <a class='header-index-a' id='header-index-a-test' href="/test">Тесты</a>
+  <a class='header-index-a' id='header-index-login'>{{ user }}</a>
+  <a class='header-index-a' id='header-index-a-login' href="/login">Сменить пользователя</a>
+</div>
+
+{% csrf_token %}
+{% for quest in questions %}
+<div class='quest-block'>
+  <div class='quest-block-title'>
+    {{ quest.title_quest }}
+  </div>
+  <div class='quest-block-text'>
+    {{ quest.text_quest }}
+  </div>
+  <div class='quest-block-date'>
+    {{ quest.date_quest }}
+  </div>
+  <button type="button" name="button" onclick='alert("{{ quest.text_response_quest }}")'>Показать решение</button>
+</div>
+{% endfor %}
+
+{% endblock %}

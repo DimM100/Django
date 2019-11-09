@@ -1,0 +1,22 @@
+{% extends "wrapper.html" %}
+
+{% block title_paper %}
+DIMM100: Тесты
+{% endblock %}
+
+{% block content_script %}
+
+{% endblock %}
+{% block content %}
+<div class='test-block'>
+  <div class='test-block-title' name='test-block-title'>Авторизация</div>
+  <div class='test-block-text' name='test-block-text'>
+    <form method="POST" action="" name="form-test">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Войти</button>
+      <a class="header-index-a" href="/login/registr">Зарегистрироваться</a>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "wrapper.html" %}
+
+{% block title_paper %}
+DIMM100: Тесты
+{% endblock %}
+
+{% block content_script %}
+<script type="text/javascript">
+
+</script>
+{% endblock %}
+
+{% block content %}
+<div class='header' id='header-index'>
+  <a class='header-index-a' id='header-index-a-main_list' href="/">Основная страница</a>
+  <a class='header-index-a' id='header-index-a-resume' href="/resume">Резюме</a>
+  <a class='header-index-a' id='header-index-a-quest' href="/quest">Задания</a>
+  <a class='header-index-a' id='header-index-a-theory' href="/theory">Теория</a>
+  <a class='header-index-a' id='header-index-a-kim' href="/kim">КИМы</a>
+  <a class='header-index-a-active' id='header-index-a-test' href="/test">Тесты</a>
+  <a class='header-index-a' id='header-index-login'>{{ user }}</a>
+  <a class='header-index-a' id='header-index-a-login' href="/login">Сменить пользователя</a>
+</div>
+
+<div class='full-news-block'>
+  <div class='news-block'>
+    <div class='news-block-title'>Перечень доступных тестов</div>
+  </div>
+  <form method="post" name="form-test-chose" class="news-block-text">
+      {% csrf_token %}
+      {% for test in tests %}
+        <div class='news-block'>
+          <div class='news-block-title'>
+            <input type="radio" name="radio-test-chose" value="{{ test.id }}">{{ test.title_test }}</input><br>
+          </div>
+          <div class='news-block-text'>
+            {{ test.text_test }}
+          </div>
+        </div>
+        <div class='news-block-img'>
+          <img src='{{ test.img_test }}' class='news-block-img'>
+        </div>
+      {% endfor %}
+    <input type="submit" class="submit-chose-test" name="submit-chose-test" value="Перейти к тесту">
+  </form>
+</div>
+{% endblock %}

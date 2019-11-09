@@ -1,0 +1,21 @@
+{% extends "wrapper.html" %}
+
+{% block title_paper %}
+DIMM100: Тесты
+{% endblock %}
+
+{% block content_script %}
+
+{% endblock %}
+{% block content %}
+<div class='logreg-block'>
+  <div class='logreg-block-title' name='test-block-title'>Регистрация</div>
+  <div class='logreg-block-text' name='test-block-text'>
+    <form method="POST" action="" name="form-test">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Зарегистрироваться</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

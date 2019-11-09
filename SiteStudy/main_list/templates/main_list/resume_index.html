@@ -1,0 +1,89 @@
+{% extends "wrapper.html" %}
+
+{% block title_paper %}
+DIMM100: Резюме
+{% endblock %}
+
+{% block content_script %}
+<script type="text/javascript">
+
+</script>
+{% endblock %}
+
+{% block content %}
+<div class='header' id='header-index'>
+  <a class='header-index-a' id='header-resume-index-a-main_list' href="/">Основная страница</a>
+  <a class='header-index-a-active' id='header-resume-index-a-resume' href="/resume">Резюме</a>
+  <a class='header-index-a' id='header-resume-index-a-quest' href="/quest">Задания</a>
+  <a class='header-index-a' id='header-resume-index-a-theory' href="/theory">Теория</a>
+  <a class='header-index-a' id='header-resume-index-a-kim' href="/kim">КИМы</a>
+  <a class='header-index-a' id='header-index-a-test' href="/test">Тесты</a>
+  <a class='header-index-a' id='header-index-login'>{{ user }}</a>
+  <a class='header-index-a' id='header-index-a-login' href="/login">Сменить пользователя</a>
+</div>
+
+{% csrf_token %}
+<div class='resume-fio-block'>
+  <div class='resume-name-block'>
+    <div class='resume-name-block-1'>Имя: </div>
+    <div class='resume-name-block-2'>{{ user_c.first_name }}</div>
+  </div>
+  <br>
+  <div class='resume-name-block'>
+    <div class='resume-name-block-1'>Фамилия: </div>
+    <div class='resume-name-block-2'>{{ user_c.last_name }}</div>
+  </div>
+  <br>
+  <div class='resume-name-block'>
+    <div class='resume-name-block-1'>Дата рождения: </div>
+    <div class='resume-name-block-2'>{{ user_p.birthday }}</div>
+  </div>
+</div>
+<br>
+<div class='resume-study-block'>
+  <div class='resume-study-block-title'>Образование</div>
+  {% for study_place in study_places %}
+  <div class='resume-study-block-1'>
+    <div class='resume-study-block-1-name'>
+      <div class='resume-study-block-1-name-1'>Наименование учебной организации</div>
+      <div class='resume-study-block-1-name-2'>{{ study_place.name_spl }}</div>
+    </div>
+
+    <div class='resume-study-block-1-name'>
+      <div class='resume-study-block-1-name-1'>Факультет</div>
+      <div class='resume-study-block-1-name-2'>{{ study_place.name_facult_spl }}</div>
+    </div>
+
+    <div class='resume-study-block-1-name'>
+      <div class='resume-study-block-1-name-1'>Направление</div>
+      <div class='resume-study-block-1-name-2'>{{ study_place.name_way_spl }}</div>
+    </div>
+
+    <div class='resume-study-block-1-name'>
+      <div class='resume-study-block-1-name-1'>Время обучения</div>
+      <div class='resume-study-block-1-name-2'>{{ study_place.date_start_stady }} - {{ study_place.date_finish_stady }}</div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class='resume-study-block'>
+  <div class='resume-study-block-title'>Навыки</div>
+  {% for skill in skills %}
+  <div class='resume-study-block-1-name'>
+    <div class='resume-study-block-1-name-1'>
+      {{ skill.title_skill }}
+    </div>
+    <div class='resume-study-block-1-name-2'>
+      {{ skill.text_skill }}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class='resume-block-img'>
+  <img src='{{ user_p.image_adress }}' class='resume-block-img-img'>
+</div>
+
+<div class='resume-study-block'> {{ user_p.text_user }}</div>
+{% endblock %}
